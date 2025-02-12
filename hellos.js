@@ -1,11 +1,11 @@
-function isPrime(num) {
-  if (num <= 1) return false;
-  if (num <= 3) return true;
-  if (num % 2 === 0 || num % 3 === 0) return false;
-  for (let i = 5; i * i <= num; i += 6) {
-    if (num % i === 0 || num % (i + 2) === 0) return false;
-  }
+function check(char){
+  let a = 'a';
+
+if(a===char){
   return true;
+}else{
+  return false;
+}
 }
 
-console.log(isPrime(37)); // true
+console.log(check('A'));
