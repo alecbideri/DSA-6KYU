@@ -1,5 +1,21 @@
-let obj = {a:10 , b:20 , c:30};
+function fibonacci(number){
+  const newNumber = parseInt(number);
 
-for(let [keys , value] of Object.entries(obj)){
-  console.log(`${keys} , ${value}`);
+  let newArray = [];
+
+  let n1 = 0 , n2 = 1 , nextTerm = n1 + n2 ;
+  newArray = [n1,n2];
+  
+  while (nextTerm <= number){
+    n1 = n2 ;
+    n2 = nextTerm;
+    nextTerm = n1 + n2 ;
+    newArray.push(nextTerm);
+
+  }
+
+  return newArray;
+
 }
+
+console.log(fibonacci(5));
