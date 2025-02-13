@@ -1,11 +1,5 @@
-function check(char){
-  let a = 'a';
+let obj = {a:10 , b:20 , c:30};
 
-if(a===char){
-  return true;
-}else{
-  return false;
+for(let [keys , value] of Object.entries(obj)){
+  console.log(`${keys} , ${value}`);
 }
-}
-
-console.log(check('A'));
