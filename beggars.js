@@ -4,6 +4,8 @@ function beggars(values , n){
     return [];
   }
 
+  // an alternative approach to the looping strategy ;
+
   for(let value of values){
     result[index]  += value;
     index = (index+1) % n ;
