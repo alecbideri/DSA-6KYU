@@ -1,26 +1,14 @@
-function splitAndAdd(arr, n) {
-  while (n > 0 && arr.length > 1) {  
-    let mid = Math.floor(arr.length / 2);
-    
-    let array1 = arr.slice(0, mid);
-    let array2 = arr.slice(mid);
+function bouncing(h, bounce, window) {
+  if (h <= 0 || bounce >= 1 || bounce <= 0 || window >= h) return -1;
 
-    let newArr = [];
-    let diff = array2.length - array1.length; 
+  let times = 1; // First fall is always visible
 
-  
-    array1 = Array(diff).fill(0).concat(array1);
-
-    for (let i = 0; i < array2.length; i++) {
-      newArr.push(array1[i] + array2[i]); 
-    }
-
-    arr = newArr;
-    n--;  
+  while (h * bounce > window) { 
+    h *= bounce;  // Bounce up
+    times += 2;   // Seen going up + seen falling down
   }
 
-  return arr;
+  return times;
 }
 
-
-console.log(splitAndAdd([4, 2, 5, 3, 2, 5, 7], 2));
+console.log(bouncing(3.0, 0.66, 1.5)); // Output: 3
