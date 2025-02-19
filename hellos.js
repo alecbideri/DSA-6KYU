@@ -1,17 +1,6 @@
-const high = (str) => {
-  const words = str.split(" ");
-  let maxScore = 0;
-  let maxWord = "";
+function inRange(arr, min, max) {
+  return arr.filter((num) => num >= min && num <= max);
+}
 
-  for (const word of words) {
-    let score = [...word].reduce((sum, char) => sum + char.charCodeAt(0) - 96, 0);
-    if(score > maxScore){
-      maxScore = score;
-      maxWord = word;
-    }
-  }
-
-  return maxWord;
-};
-
-console.log(high('aa b'));
+// Example usage:
+console.log(inRange([1, 5, 10, 15], 5, 10)); // [5, 10]
