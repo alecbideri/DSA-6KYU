@@ -1,6 +1,5 @@
-function inRange(arr, min, max) {
-  return arr.filter((num) => num >= min && num <= max);
+Array.prototype.even= function(){
+  return this.filter((num)=>  Number.isInteger(num) && num % 2 === 0);
 }
 
-// Example usage:
-console.log(inRange([1, 5, 10, 15], 5, 10)); // [5, 10]
+console.log([1,2,3,4,5].even());
