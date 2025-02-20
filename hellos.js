@@ -1,5 +1,45 @@
-Array.prototype.even= function(){
-  return this.filter((num)=>  Number.isInteger(num) && num % 2 === 0);
+function change(string){
+  let newString = string.replace(/e/g, '!');
+  return newString;
 }
 
-console.log([1,2,3,4,5].even());
+
+
+
+// other alternative 
+
+function Change(string){
+  let newString = string.split('');
+  let anotherString = [];
+
+  for (let i = 0 ; i < newString.length ; i++){
+    if(newString[i] === 'e'){
+      anotherString.push('!');
+    }else {
+      anotherString.push(newString[i]);
+    }
+  }
+
+  return anotherString.join('');
+}
+
+ 
+// another 
+
+function isStringNumber(value) {
+
+  let number = 0 ;
+
+  if ( typeof value === 'string' && !isNaN(value) && value.trim() !== '' ){
+    number =  Number(value);
+  }
+  if (number > 1){
+    throw new TypeError('n is  invalid');
+  }else {
+    return number;
+  }
+
+}
+
+
+console.log(isStringNumber(3.5));
