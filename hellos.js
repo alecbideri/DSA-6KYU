@@ -1,45 +1,15 @@
-function change(string){
-  let newString = string.replace(/e/g, '!');
-  return newString;
-}
+function longestConsec(strings, k) {
+  if (k <= 0 || k > strings.length) return "";
 
+  let maxString = "";
+  let maxLength = 0;
 
-
-
-// other alternative 
-
-function Change(string){
-  let newString = string.split('');
-  let anotherString = [];
-
-  for (let i = 0 ; i < newString.length ; i++){
-    if(newString[i] === 'e'){
-      anotherString.push('!');
-    }else {
-      anotherString.push(newString[i]);
+  for (let i = 0; i <= strings.length - k; i++) {
+    let currentString = strings.slice(i, i + k).join(""); 
+      maxLength = currentString.length;
+      maxString = currentString;
     }
+
+    return maxString;
   }
 
-  return anotherString.join('');
-}
-
- 
-// another 
-
-function isStringNumber(value) {
-
-  let number = 0 ;
-
-  if ( typeof value === 'string' && !isNaN(value) && value.trim() !== '' ){
-    number =  Number(value);
-  }
-  if (number > 1){
-    throw new TypeError('n is  invalid');
-  }else {
-    return number;
-  }
-
-}
-
-
-console.log(isStringNumber(3.5));
