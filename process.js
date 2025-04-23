@@ -12,4 +12,4 @@ function process(string){
     return result.join('');
 }
 
-console.log(process("abc#d##c"))
+console.log(process("abc#d##c"));
